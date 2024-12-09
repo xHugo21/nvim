@@ -1,7 +1,0 @@
-return {
-  "olimorris/onedarkpro.nvim",
-  priority = 1000, -- Ensure it loads first
-  colors = {
-    onedark = { bg = "#121212" },
-  },
-}
