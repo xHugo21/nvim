@@ -13,6 +13,18 @@ return {
     end,
   },
   {
+    "zbirenbaum/copilot.lua",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    config = function()
+      require("copilot").setup({
+        chat = {
+          enabled = true,
+          auto_trigger = true,
+        },
+      })
+    end,
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = { "zbirenbaum/copilot.lua" },
     config = function()
