@@ -9,10 +9,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
   desc = "Disable New Line Comment",
 })
-
--- Modify onedarkpro bg color
-require("onedarkpro").setup({
-  colors = {
-    bg = "#282C35",
-  },
-})
