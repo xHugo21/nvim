@@ -2,8 +2,9 @@ return {
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000, -- Ensure it loads first
-    colors = {
-      onedark = { bg = "#282C35" },
-    },
   },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   priority = 1000, -- Ensure it loads first
+  -- },
 }
