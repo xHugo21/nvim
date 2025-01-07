@@ -10,6 +10,4 @@ return {
   { import = "lazyvim.plugins.extras.ui.mini-animate" },
   -- Git diffs
   { import = "lazyvim.plugins.extras.editor.mini-diff" },
-  -- Useful when there are embedded languages in certain types of files (e.g. Vue or React)
-  { "joosepalviste/nvim-ts-context-commentstring", lazy = true },
 }
