@@ -1,3 +1,10 @@
-return {
-  "mg979/vim-visual-multi",
-}
+-- return {
+--   {
+--     "mg979/vim-visual-multi",
+--     lazy = true,
+--     event = { "BufReadPre", "BufNewFile" },
+--     config = function()
+--       vim.g.VM_default_mappings = 1 -- Enable default mappings
+--     end,
+--   },
+-- }
