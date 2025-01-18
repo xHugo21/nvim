@@ -1,8 +1,19 @@
-# :pencil: NeoVim Custom Config
+# :page_facing_up: xHugo21's nvim config
 
-My customized nvim config files. Base configuration from [LazyVim](https://github.com/LazyVim/LazyVim).
+Built upon [LazyVim](https://github.com/LazyVim/LazyVim)
 
-# :wrench: Important customization commands
+## Auto cmds
 
-- ":Lazy": Launches LazyVim plugin configuration
-- ":Mason": Launches Mason menu to install language servers, linters and formatters
+- Disable auto next comment
+- Automatically close nvim when only left window is neo-tree
+
+## Plugins (additional from LazyVim base config)
+
+- "terryma/vim-multiple-cursors"
+- "yetone/avante.nvim",
+
+## Extras
+
+- Prettier
+- ESLint
+- mini-diffs
