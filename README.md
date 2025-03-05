@@ -1,19 +1,5 @@
 # :page_facing_up: xHugo21's nvim config
 
-Built upon [LazyVim](https://github.com/LazyVim/LazyVim)
+Forked from [LazyVim](https://github.com/LazyVim/LazyVim)
 
-## Auto cmds
-
-- Disable auto next comment
-- Automatically close nvim when only left window is neo-tree
-
-## Plugins (additional from LazyVim base config)
-
-- "terryma/vim-multiple-cursors"
-- "yetone/avante.nvim",
-
-## Extras
-
-- Prettier
-- ESLint
-- mini-diffs
+![Screenshot_05-Mar_19-12-41_20355](https://github.com/user-attachments/assets/fdfbb2d6-951d-4328-8a7b-22f2246081c9)
