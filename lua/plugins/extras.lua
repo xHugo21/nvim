@@ -8,6 +8,6 @@ return {
   { import = "lazyvim.plugins.extras.formatting.prettier" },
   -- Animations
   -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-  -- Git diffs
-  { import = "lazyvim.plugins.extras.editor.mini-diff" },
+  -- Git diffs (disables gitsigns automatically)
+  -- { import = "lazyvim.plugins.extras.editor.mini-diff" },
 }
