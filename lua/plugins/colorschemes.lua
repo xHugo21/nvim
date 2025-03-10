@@ -17,7 +17,7 @@ return {
     opts = {
       transparent = true,
       overrides = {
-        Normal = { bg = "#282C34" }, -- Replace with your desired background color
+        Normal = { bg = "#282C34" },
       },
     },
   },
