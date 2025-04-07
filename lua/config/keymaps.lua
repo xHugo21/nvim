@@ -4,7 +4,6 @@
 
 -- CodeCompanion
 vim.api.nvim_set_keymap("n", "<leader>aa", ":CodeCompanionChat<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>aa", ":CodeCompanionChat<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>ae", ":CodeCompanion<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>ax", ":CodeCompanionActions<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<leader>ax", ":CodeCompanionActions<CR>", { noremap = true, silent = true })
