@@ -16,9 +16,9 @@ return {
     priority = 1000,
     opts = {
       transparent = true,
-      overrides = {
-        Normal = { bg = "#282C34" },
-      },
+      -- overrides = {
+      --   Normal = { bg = "#282C34", fg = "#ABB2BF" }, -- Set fg to a less bright color
+      -- },
     },
   },
   -- {
