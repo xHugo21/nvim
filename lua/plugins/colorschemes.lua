@@ -6,36 +6,26 @@ return {
   -- {
   --   "rebelot/kanagawa.nvim",
   --   priority = 1000,
+  --   opts = {
+  --     colors = {
+  --       theme = { dragon = { ui = { bg_gutter = "none" } } }, -- Remove line numbers bg
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "datsfilipe/vesper.nvim",
+  --   priority = 1000,
+  --   opts = {
+  --     transparent = true,
+  --   },
   -- },
   -- {
   --   "nyoom-engineering/oxocarbon.nvim",
   --   priority = 1000,
   -- },
-  {
-    "datsfilipe/vesper.nvim",
-    priority = 1000,
-    opts = {
-      transparent = true,
-      -- overrides = {
-      --   Normal = { bg = "#282C34", fg = "#ABB2BF" }, -- Set fg to a less bright color
-      -- },
-    },
-  },
-  -- {
-  --   "rose-pine/neovim",
-  --   priority = 1000,
-  -- },
   -- {
   --   "wnkz/monoglow.nvim",
   --   priority = 1000,
-  -- config = function()
-  --   require("monoglow").setup({
-  --     -- Change the "glow" color
-  --     on_colors = function(colors)
-  --       colors.glow = "#fd1b7c" -- Custom glow color
-  --     end,
-  --   })
-  --   vim.cmd("colorscheme monoglow") -- Apply the colorscheme
-  -- end,
   -- },
+  { "arcticicestudio/nord-vim", priority = 1000 },
 }
