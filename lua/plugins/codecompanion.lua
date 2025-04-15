@@ -30,6 +30,12 @@ return {
       log_level = "DEBUG",
     },
   },
+  keys = {
+    { "<leader>aa", "<cmd>CodeCompanionChat Toggle<CR>", mode = { "n" }, desc = "Toggle CodeCompanion Chat" },
+    { "<leader>an", "<cmd>CodeCompanionChat<CR>", mode = { "n" }, desc = "Open CodeCompanion Chat" },
+    { "<leader>ae", "<cmd>CodeCompanion<CR>", mode = { "v" }, desc = "CodeCompanion Prompt" },
+    { "<leader>ax", "<cmd>CodeCompanionActions<CR>", mode = { "n", "v" }, desc = "CodeCompanion Actions" },
+  },
   dependencies = {
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     { "nvim-lua/plenary.nvim" },
