@@ -320,20 +320,18 @@ local code_editor = CodeEditor:new()
 
 local config = {
   adapters = {
-    adapters = {
-      copilot = function()
-        return require("codecompanion.adapters").extend("copilot", {
-          schema = {
-            model = {
-              default = "claude-3.7-sonnet",
-            },
-            max_tokens = {
-              default = 64000,
-            },
+    copilot = function()
+      return require("codecompanion.adapters").extend("copilot", {
+        schema = {
+          model = {
+            default = "claude-3.5-sonnet",
           },
-        })
-      end,
-    },
+          max_tokens = {
+            default = 64000,
+          },
+        },
+      })
+    end,
   },
   strategies = {
     -- CHAT STRATEGY ----------------------------------------------------------
@@ -666,7 +664,7 @@ in all expected scenarios.]]
       separator = "─", -- The separator between the different messages in the chat buffer
       show_settings = false, -- Show LLM settings at the top of the chat buffer?
       show_token_count = true, -- Show the token count for each response?
-      start_in_insert_mode = false, -- Open the chat buffer in insert mode?
+      start_in_insert_mode = true, -- Open the chat buffer in insert mode?
     },
     diff = {
       enabled = true,
@@ -693,17 +691,6 @@ in all expected scenarios.]]
 return {
   "olimorris/codecompanion.nvim",
   event = "VeryLazy",
-  -- config = true,
-  -- opts = {
-  --   strategies = {
-  --     chat = { adapter = "copilot" },
-  --     inline = { adapter = "copilot" },
-  --     agent = { adapter = "copilot" },
-  --   },
-  --   opts = {
-  --     log_level = "DEBUG",
-  --   },
-  -- },
   config = function()
     -- mappings group
     local wk = require("which-key")
