@@ -26,6 +26,11 @@ return {
   -- {
   --   "wnkz/monoglow.nvim",
   --   priority = 1000,
+  --   opts = {
+  --     on_colors = function(colors)
+  --       colors.glow = "#fd1b7c" -- Change the accent color
+  --     end,
+  --   },
   -- },
   { "arcticicestudio/nord-vim", priority = 1000 },
 }
