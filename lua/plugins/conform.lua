@@ -10,6 +10,7 @@ return {
       -- python = { "black" },
       -- html = { "prettier" },
       -- css = { "prettier" },
+      vue = { "prettier" },
     },
     default_format_opts = {
       lsp_format = "fallback",
