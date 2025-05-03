@@ -12,13 +12,17 @@ return {
   --     },
   --   },
   -- },
-  -- {
-  --   "datsfilipe/vesper.nvim",
-  --   priority = 1000,
-  --   opts = {
-  --     transparent = true,
-  --   },
-  -- },
+  {
+    "datsfilipe/vesper.nvim",
+    priority = 1000,
+    opts = {
+      transparent = true,
+      palette_overrides = {
+        bgOption = "NONE",
+        fg = "#E6E6E6",
+      },
+    },
+  },
   -- {
   --   "nyoom-engineering/oxocarbon.nvim",
   --   priority = 1000,
@@ -32,5 +36,5 @@ return {
   --     end,
   --   },
   -- },
-  { "arcticicestudio/nord-vim", priority = 1000 },
+  -- { "arcticicestudio/nord-vim", priority = 1000 },
 }
