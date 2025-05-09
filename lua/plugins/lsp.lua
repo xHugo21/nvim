@@ -2,6 +2,7 @@ return {
   -- Mason plugin for managing LSP servers, linters, and formatters
   {
     "williamboman/mason.nvim",
+    version = "^1.0.0",
     cmd = "Mason",
     config = function()
       require("mason").setup()
@@ -11,21 +12,18 @@ return {
   -- Mason LSPConfig to automatically link Mason with nvim-lspconfig
   {
     "williamboman/mason-lspconfig.nvim",
-    dependencies = { "neovim/nvim-lspconfig" },
+    version = "^1.0.0",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
+    },
     config = function()
       require("mason-lspconfig").setup()
 
-      -- Setup the handlers for LSP servers
       require("mason-lspconfig").setup_handlers({
-        -- Default handler for any LSP server
         function(server_name)
           require("lspconfig")[server_name].setup({})
         end,
-
-        -- Dedicated handler for specific servers
-        -- ["rust_analyzer"] = function()
-        --   require("rust-tools").setup({})
-        -- end,
       })
     end,
   },
