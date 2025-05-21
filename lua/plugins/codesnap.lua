@@ -10,8 +10,8 @@ return {
     has_breadcrumbs = true,
     bg_theme = "dusk",
     watermark = "",
-    bg_x_padding = 102,
-    bg_y_padding = 62,
+    bg_x_padding = 50,
+    bg_y_padding = 30,
     bg_padding = nil,
   },
 }
