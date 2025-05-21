@@ -28,18 +28,16 @@ local config = {
         end,
         user = "Me",
       },
-      -- tools = {
-      --   vectorcode = {
-      --     description = "Run VectorCode to retrieve the project context.",
-      --     callback = function()
-      --       return require("vectorcode.integrations.codecompanion").chat.make_tool()
-      --     end,
-      --   },
-      -- },
-      -- slash_commands = {
-      --   -- add the vectorcode command here.
-      --   codebase = require("vectorcode.integrations").codecompanion.chat.make_slash_command(),
-      -- },
+      slash_commands = {
+        ["file"] = { -- Maps <C-p> to enter files as context
+          keymaps = {
+            modes = {
+              i = "<C-p>",
+              n = "<C-p>",
+            },
+          },
+        },
+      },
     },
   },
   -- DISPLAY OPTIONS ----------------------------------------------------------
