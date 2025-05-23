@@ -3,15 +3,6 @@ return {
   --   "olimorris/onedarkpro.nvim",
   --   priority = 1000,
   -- },
-  -- {
-  --   "rebelot/kanagawa.nvim",
-  --   priority = 1000,
-  --   opts = {
-  --     colors = {
-  --       theme = { dragon = { ui = { bg_gutter = "none" } } }, -- Remove line numbers bg
-  --     },
-  --   },
-  -- },
   {
     "datsfilipe/vesper.nvim",
     priority = 1000,
@@ -24,15 +15,11 @@ return {
     },
   },
   -- {
-  --   "nyoom-engineering/oxocarbon.nvim",
-  --   priority = 1000,
-  -- },
-  -- {
   --   "wnkz/monoglow.nvim",
   --   priority = 1000,
   --   opts = {
   --     on_colors = function(colors)
-  --       colors.glow = "#fd1b7c" -- Change the accent color
+  --       colors.glow = "#fd1b7c"
   --     end,
   --   },
   -- },

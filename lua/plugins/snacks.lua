@@ -68,7 +68,7 @@ return {
           local version = vim.version()
           return {
             align = "center",
-            text = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch,
+            text = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch,
             padding = 1,
             indent = 60,
           }
