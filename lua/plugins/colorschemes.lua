@@ -7,7 +7,7 @@ return {
     "datsfilipe/vesper.nvim",
     priority = 1000,
     opts = {
-      transparent = true,
+      transparent = false,
       palette_overrides = {
         bgOption = "NONE",
         fg = "#E6E6E6",
