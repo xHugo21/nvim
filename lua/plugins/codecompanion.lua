@@ -9,10 +9,7 @@ local config = {
       return require("codecompanion.adapters").extend("copilot", {
         schema = {
           model = {
-            default = "claude-3.5-sonnet",
-          },
-          max_tokens = {
-            default = 64000,
+            default = "claude-sonnet-4",
           },
         },
       })
@@ -22,6 +19,11 @@ local config = {
     -- CHAT STRATEGY ----------------------------------------------------------
     chat = {
       adapter = "copilot",
+      variables = {
+        buffer = {
+          opts = { default_params = "watch" },
+        },
+      },
       roles = {
         llm = function(adapter)
           return adapter.formatted_name .. " (model=" .. adapter.parameters.model .. ")"
