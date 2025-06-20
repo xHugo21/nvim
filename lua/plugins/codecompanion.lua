@@ -1,9 +1,9 @@
 local config = {
-  extensions = {
-    vectorcode = {
-      opts = { add_tool = true, add_slash_command = true, tool_opts = {} },
-    },
-  },
+  -- extensions = {
+  --   vectorcode = {
+  --     opts = { add_tool = true, add_slash_command = true, tool_opts = {} },
+  --   },
+  -- },
   adapters = {
     copilot = function()
       return require("codecompanion.adapters").extend("copilot", {
@@ -143,9 +143,9 @@ return {
         },
       },
     },
-    {
-      "Davidyz/VectorCode",
-      dependencies = { "nvim-lua/plenary.nvim" },
-    },
+    -- {
+    --   "Davidyz/VectorCode",
+    --   dependencies = { "nvim-lua/plenary.nvim" },
+    -- },
   },
 }
