@@ -11,6 +11,7 @@ return {
       -- html = { "prettier" },
       -- css = { "prettier" },
       vue = { "prettier" },
+      typst = { "typstyle" },
     },
     default_format_opts = {
       lsp_format = "fallback",
