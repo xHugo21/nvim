@@ -7,7 +7,7 @@ return {
     "datsfilipe/vesper.nvim",
     priority = 1000,
     opts = {
-      transparent = false,
+      transparent = true,
       palette_overrides = {
         bgOption = "NONE",
         fg = "#E6E6E6",
@@ -24,4 +24,7 @@ return {
   --   },
   -- },
   -- { "arcticicestudio/nord-vim", priority = 1000 },
+  -- { "ellisonleao/gruvbox.nvim", priority = 1000, opts = {
+  --   background = "dark",
+  -- } },
 }
