@@ -4,4 +4,4 @@
 
 vim.opt.background = "dark"
 vim.opt.winborder = "rounded"
-vim.g.root_spec = { "cwd" } -- Avoid automatically changing working directory
+-- vim.g.root_spec = { "cwd" } -- Avoid automatically changing working directory
