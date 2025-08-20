@@ -1,19 +1,24 @@
 return {
-  -- {
-  --   "olimorris/onedarkpro.nvim",
-  --   priority = 1000,
-  -- },
   {
-    "datsfilipe/vesper.nvim",
+    "olimorris/onedarkpro.nvim",
     priority = 1000,
     opts = {
-      transparent = true,
-      palette_overrides = {
-        bgOption = "NONE",
-        fg = "#E6E6E6",
+      options = {
+        transparency = true,
       },
     },
   },
+  -- {
+  --   "datsfilipe/vesper.nvim",
+  --   priority = 1000,
+  --   opts = {
+  --     transparent = true,
+  --     palette_overrides = {
+  --       bgOption = "NONE",
+  --       fg = "#E6E6E6",
+  --     },
+  --   },
+  -- },
   -- {
   --   "wnkz/monoglow.nvim",
   --   priority = 1000,
