@@ -9,6 +9,18 @@ return {
     },
   },
   -- {
+  --   "kyza0d/xeno.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("xeno").new_theme("xeno", {
+  --       base = "#1E1E1E",
+  --       accent = "#fd1b7c",
+  --     })
+  --     vim.cmd("colorscheme xeno")
+  --   end,
+  -- },
+  -- {
   --   "datsfilipe/vesper.nvim",
   --   priority = 1000,
   --   opts = {
