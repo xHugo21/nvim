@@ -21,7 +21,7 @@ return {
           previewer = "builtin",
           layout = "vertical",
           horizontal = "down:40%",
-          border = "thin",
+          border = "rounded",
           wrap = "nowrap",
         },
       },
