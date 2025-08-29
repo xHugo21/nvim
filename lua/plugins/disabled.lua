@@ -1,3 +1,4 @@
+-- List of disabled plugins from LazyVim
 return {
   { "folke/tokyonight.nvim", enabled = false },
   { "catppuccin/nvim", enabled = false },
