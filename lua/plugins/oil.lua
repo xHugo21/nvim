@@ -1,7 +1,11 @@
 return {
   "stevearc/oil.nvim",
   lazy = false,
-  opts = {},
+  opts = {
+    keymaps = {
+      ["<C-s>"] = false, -- Disables default split-open with ctrl-s
+    },
+  },
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   keys = {
     {
