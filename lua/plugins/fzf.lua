@@ -13,4 +13,18 @@ return {
 
     return keys
   end,
+
+  opts = function(_, opts)
+    return vim.tbl_deep_extend("force", opts or {}, {
+      winopts = {
+        preview = {
+          previewer = "builtin",
+          layout = "vertical",
+          horizontal = "down:40%",
+          border = "thin",
+          wrap = "nowrap",
+        },
+      },
+    })
+  end,
 }
