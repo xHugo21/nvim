@@ -2,8 +2,10 @@ return {
   "stevearc/oil.nvim",
   lazy = false,
   opts = {
+    skip_confirm_for_simple_edits = true,
     keymaps = {
       ["<C-s>"] = false, -- Disables default split-open with ctrl-s
+      ["H"] = "actions.toggle_hidden",
     },
   },
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
