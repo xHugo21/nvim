@@ -1,5 +1,6 @@
 return {
   "nvim-neotest/neotest",
+  enabled = true,
   dependencies = { "nvim-neotest/nvim-nio", "nvim-neotest/neotest-jest" },
   opts = {
     -- Can be a list of adapters like what neotest expects,
