@@ -8,7 +8,17 @@ return {
       ["H"] = "actions.toggle_hidden",
     },
   },
-  dependencies = { { "echasnovski/mini.icons", opts = {} } },
+  config = function(_, opts)
+    require("oil").setup(opts)
+
+    -- Open Oil if Neovim is started without a file or directory argument
+    if vim.fn.argc() == 0 then
+      vim.defer_fn(function()
+        require("oil").open()
+      end, 0)
+    end
+  end,
+  dependencies = { { "nvim-mini/mini.icons", opts = {} } },
   keys = {
     {
       "<leader>e",
