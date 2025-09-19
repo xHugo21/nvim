@@ -10,23 +10,20 @@ return {
 
   -- Mason LSPConfig to automatically link Mason with nvim-lspconfig
   {
-    "mason-org/mason-lspconfig.nvim",
+    "mason-org/mason.nvim",
     dependencies = {
-      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
     },
     config = function()
-      local mason_lspconfig = require("mason-lspconfig")
-      local lspconfig = require("lspconfig")
-
-      mason_lspconfig.setup({
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+        },
         automatic_enable = true,
       })
-
-      for _, server_name in ipairs(mason_lspconfig.get_installed_servers()) do
-        lspconfig[server_name].setup({})
-      end
-    end,
+    end
   },
 
   -- nvim-lspconfig for configuring LSP servers
