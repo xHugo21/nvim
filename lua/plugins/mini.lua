@@ -1,6 +1,11 @@
 return {
   { 'nvim-mini/mini.icons' },
-  { 'nvim-mini/mini.surround' },
+  {
+    'nvim-mini/mini.surround',
+    config = function()
+      require('mini.surround').setup()
+    end,
+  },
   {
     'nvim-mini/mini.pairs',
     event = 'VeryLazy',
