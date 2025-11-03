@@ -1,0 +1,47 @@
+return {
+  'ibhagwan/fzf-lua',
+  cmd = 'FzfLua',
+  opts = function(_, opts)
+    local fzf = require 'fzf-lua'
+    local config = fzf.config
+    local actions = fzf.actions
+
+    -- Quickfix
+    config.defaults.keymap.fzf['ctrl-q'] = 'select-all+accept'
+
+    return vim.tbl_deep_extend('force', opts or {}, {
+      winopts = {
+        preview = {
+          previewer = 'builtin',
+          layout = 'vertical',
+          horizontal = 'down:40%',
+          border = 'rounded',
+          wrap = 'nowrap',
+        },
+      },
+      files = {
+        cwd_prompt = false,
+        actions = {
+          ['alt-i'] = { actions.toggle_ignore },
+          ['alt-h'] = { actions.toggle_hidden },
+        },
+      },
+      grep = {
+        actions = {
+          ['alt-i'] = { actions.toggle_ignore },
+          ['alt-h'] = { actions.toggle_hidden },
+        },
+      },
+    })
+  end,
+  keys = {
+    {
+      '<leader>,',
+      '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>',
+      desc = 'Switch Buffer',
+    },
+    { '<leader><space>', '<cmd>FzfLua files<cr>', desc = 'Find Files' },
+    { '<leader>sg', '<cmd>FzfLua live_grep<cr>', desc = 'Live Grep' },
+  },
+  dependencies = { 'nvim-mini/mini.icons' },
+}
