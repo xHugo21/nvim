@@ -5,7 +5,7 @@ return {
       chat = {
         adapter = {
           name = 'copilot',
-          model = 'claude-sonnet-4.5',
+          model = 'gpt-4.1',
         },
         slash_commands = {
           ['file'] = { -- Maps <C-p> to enter files as context
