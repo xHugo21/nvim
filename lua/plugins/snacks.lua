@@ -1,6 +1,9 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    gh = {
+      enabled = true,
+    },
     dashboard = {
       enabled = false,
       preset = {
@@ -76,5 +79,9 @@ return {
         end,
       },
     },
+  },
+  keys = {
+    { "<leader>gp", function() Snacks.picker.gh_pr() end,                  desc = "GitHub Pull Requests (open)" },
+    { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, desc = "GitHub Pull Requests (all)" },
   },
 }
