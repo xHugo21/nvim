@@ -13,6 +13,7 @@ return {
         },
       },
       scope = {}, -- Scope detection, text objects and jumping based on treesitter or indent
+      gitbrowse = {},
     },
     keys = {
       {
@@ -21,6 +22,13 @@ return {
           require('snacks').lazygit()
         end,
         desc = 'Open Lazygit',
+      },
+      {
+        '<leader>go',
+        function()
+          require('snacks').gitbrowse()
+        end,
+        desc = 'Git Open',
       },
     },
   },
