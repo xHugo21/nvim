@@ -99,3 +99,37 @@ vim.api.nvim_create_autocmd('BufEnter', {
     vim.opt.formatoptions:remove { 'c', 'r', 'o' }
   end,
 })
+
+-- open current git repo in GitHub
+vim.api.nvim_create_user_command('OpenGitHubRepo', function()
+  -- Get the remote origin URL
+  local remote = vim.fn.system('git remote get-url origin'):gsub('%s+', '')
+  if remote == '' then
+    vim.notify("Not a git repository or no remote named 'origin'", vim.log.levels.WARN)
+    return
+  end
+
+  -- Convert SSH to HTTPS if needed
+  -- e.g. git@github.com:user/repo.git → https://github.com/user/repo
+  local url = remote:gsub('^git@([^:]+):', 'https://%1/'):gsub('%.git$', ''):gsub('^ssh://git@', 'https://')
+
+  -- For HTTPS remotes, just strip trailing .git
+  url = url:gsub('%.git$', '')
+
+  -- Open in default browser
+  if vim.fn.has 'mac' == 1 then
+    vim.fn.jobstart({ 'open', url }, { detach = true })
+  elseif vim.fn.has 'unix' == 1 then
+    vim.fn.jobstart({ 'xdg-open', url }, { detach = true })
+  elseif vim.fn.has 'win32' == 1 then
+    vim.fn.jobstart({ 'start', url }, { detach = true })
+  else
+    vim.notify('Could not detect OS to open browser', vim.log.levels.ERROR)
+    return
+  end
+
+  vim.notify('Opening ' .. url)
+end, { desc = 'Open current GitHub repo in browser' })
+
+-- Optional keymap
+vim.keymap.set('n', '<leader>go', ':OpenGitHubRepo<CR>', { desc = 'Open current repo on GitHub' })
