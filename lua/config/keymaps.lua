@@ -47,7 +47,7 @@ map('o', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev Search Result
 -- save file
 map({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
---keywordprg
+-- keywordprg
 map('n', '<leader>K', '<cmd>norm! K<cr>', { desc = 'Keywordprg' })
 
 -- better indenting
@@ -82,6 +82,8 @@ map('n', '<leader>xx', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
 -- Snacks.toggle.scroll():map("<leader>uS")
 -- Snacks.toggle.profiler():map("<leader>dpp")
 -- Snacks.toggle.profiler_highlights():map("<leader>dph")
+-- Snacks.toggle.zoom():map("<leader>wm"):map("<leader>uZ")
+-- Snacks.toggle.zen():map("<leader>uz")
 
 -- if vim.lsp.inlay_hint then
 --   Snacks.toggle.inlay_hints():map("<leader>uh")
@@ -93,5 +95,3 @@ map('n', '<leader>xx', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
 map('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below', remap = true })
 map('n', '<leader>|', '<C-W>v', { desc = 'Split Window Right', remap = true })
 map('n', '<leader>wd', '<C-W>c', { desc = 'Delete Window', remap = true })
--- Snacks.toggle.zoom():map("<leader>wm"):map("<leader>uZ")
--- Snacks.toggle.zen():map("<leader>uz")
