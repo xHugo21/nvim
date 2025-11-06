@@ -30,6 +30,18 @@ return {
         end,
         desc = 'Git Open',
       },
+      { '<leader>bd',
+        function()
+          require('snacks').bufdelete()
+        end,
+        { desc = "Delete Buffer" }
+      },
+      { '<leader>bo',
+        function()
+          require('snacks').bufdelete.other()
+        end,
+        { desc = "Delete Other Buffers" }
+      },
     },
   },
 }

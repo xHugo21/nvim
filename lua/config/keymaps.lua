@@ -34,12 +34,6 @@ map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 map('n', ']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
 map('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 map('n', '<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
--- map("n", "<leader>bd", function()
---   Snacks.bufdelete()
--- end, { desc = "Delete Buffer" })
--- map("n", "<leader>bo", function()
---   Snacks.bufdelete.other()
--- end, { desc = "Delete Other Buffers" })
 map('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
 
 -- Clear search and stop snippet on escape
@@ -113,20 +107,7 @@ map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
 --   Snacks.toggle.inlay_hints():map("<leader>uh")
 -- end
 
--- lazygit
--- if vim.fn.executable("lazygit") == 1 then
---   map("n", "<leader>gg", function() Snacks.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
---   map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (cwd)" })
---   map("n", "<leader>gf", function() Snacks.picker.git_log_file() end, { desc = "Git Current File History" })
---   map("n", "<leader>gl", function() Snacks.picker.git_log({ cwd = LazyVim.root.git() }) end, { desc = "Git Log" })
---   map("n", "<leader>gL", function() Snacks.picker.git_log() end, { desc = "Git Log (cwd)" })
--- end
-
 -- map("n", "<leader>gb", function() Snacks.picker.git_log_line() end, { desc = "Git Blame Line" })
--- map({ "n", "x" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse (open)" })
--- map({"n", "x" }, "<leader>gY", function()
---   Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
--- end, { desc = "Git Browse (copy)" })
 
 -- windows
 map('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below', remap = true })
