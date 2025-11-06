@@ -71,15 +71,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- fix conceallevel for json files
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-  group = vim.api.nvim_create_augroup('json_conceal', { clear = true }),
-  pattern = { 'json', 'jsonc', 'json5' },
-  callback = function()
-    vim.opt_local.conceallevel = 0
-  end,
-})
-
 -- auto create dir when saving a file in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   group = vim.api.nvim_create_augroup('auto_create_dir', { clear = true }),
@@ -93,9 +84,9 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 })
 
 -- disable auto comment after line
-vim.api.nvim_create_autocmd('BufEnter', {
-  group = vim.api.nvim_create_augroup('disable_auto_comment', { clear = true }),
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
   callback = function()
-    vim.opt.formatoptions:remove { 'c', 'r', 'o' }
+    vim.opt_local.formatoptions:remove { 'c', 'r', 'o' }
   end,
 })
