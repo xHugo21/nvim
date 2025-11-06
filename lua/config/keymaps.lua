@@ -36,13 +36,6 @@ map('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 map('n', '<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 map('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
 
--- Clear search and stop snippet on escape
--- map({ "i", "n", "s" }, "<esc>", function()
---   vim.cmd("noh")
---   LazyVim.cmp.actions.snippet_stop()
---   return "<esc>"
--- end, { expr = true, desc = "Escape and Clear hlsearch" })
-
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map('n', 'n', "'Nn'[v:searchforward].'zv'", { expr = true, desc = 'Next Search Result' })
 map('x', 'n', "'Nn'[v:searchforward]", { expr = true, desc = 'Next Search Result' })
@@ -68,22 +61,8 @@ map('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Commen
 -- lazy
 map('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 
--- diagnostic
--- local diagnostic_goto = function(next, severity)
---   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
---   severity = severity and vim.diagnostic.severity[severity] or nil
---   return function()
---     go { severity = severity }
---   end
--- end
-
+-- diagnostics
 map('n', '<leader>xx', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
--- map('n', ']d', diagnostic_goto(true), { desc = 'Next Diagnostic' })
--- map('n', '[d', diagnostic_goto(false), { desc = 'Prev Diagnostic' })
--- map('n', ']e', diagnostic_goto(true, 'ERROR'), { desc = 'Next Error' })
--- map('n', '[e', diagnostic_goto(false, 'ERROR'), { desc = 'Prev Error' })
--- map('n', ']w', diagnostic_goto(true, 'WARN'), { desc = 'Next Warning' })
--- map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
 
 -- toggle options
 -- LazyVim.format.snacks_toggle():map("<leader>uf")
