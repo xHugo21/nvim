@@ -25,31 +25,12 @@ require('lazy').setup({
         accent = '#fd1b7c',
         transparent = true,
       })
-      vim.cmd 'colorscheme xeno' -- Overrides colorscheme
+      vim.cmd 'colorscheme xeno'
     end,
   },
 }, {
   change_detection = {
     enabled = true,
-    notify = false, -- get a notification when changes are found
-  },
-  ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
+    notify = false,
   },
 })
