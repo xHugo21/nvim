@@ -6,6 +6,9 @@ return {
     local config = fzf.config
     local actions = fzf.actions
 
+    -- Use as vim.ui.select
+    fzf.register_ui_select()
+
     -- Quickfix
     config.defaults.keymap.fzf['ctrl-q'] = 'select-all+accept'
 
@@ -42,6 +45,9 @@ return {
     },
     { '<leader><space>', '<cmd>FzfLua files<cr>', desc = 'Find Files' },
     { '<leader>sg', '<cmd>FzfLua live_grep<cr>', desc = 'Live Grep' },
+    { '<leader>gd', '<cmd>FzfLua git_diff<cr>', desc = 'Git Diff' },
+    { '<leader>sd', '<cmd>FzfLua diagnostics_workspace<cr>', desc = 'Search Diagnostics' },
+    { '<leader>sk', '<cmd>FzfLua keymaps<cr>', desc = 'Search Keymaps' },
   },
   dependencies = { 'nvim-mini/mini.icons' },
 }
