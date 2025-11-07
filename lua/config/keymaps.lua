@@ -64,8 +64,6 @@ map('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 -- diagnostics
 map('n', '<leader>xx', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
 
--- map("n", "<leader>gb", function() Snacks.picker.git_log_line() end, { desc = "Git Blame Line" })
-
 -- windows
 map('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below', remap = true })
 map('n', '<leader>|', '<C-W>v', { desc = 'Split Window Right', remap = true })
