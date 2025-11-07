@@ -80,5 +80,5 @@ opt.timeoutlen = 1000 -- Timeout between leader key press and following letters 
 opt.undofile = true -- Save undo history to a .undo file so it can undo after reopening
 opt.undolevels = 10000
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
-opt.wrap = false -- Disable line wrap
+opt.wrap = false -- Disable line wrap. Activated via autocmd on typing files: Markdown, Typst...
 opt.linebreak = true -- Wrap lines at convenient points (Only matters if wrap is on)
