@@ -13,6 +13,10 @@ return {
     config.defaults.keymap.fzf['ctrl-q'] = 'select-all+accept'
 
     return vim.tbl_deep_extend('force', opts or {}, {
+      defaults = {
+        file_icons = 'mini',
+        formatter = 'path.dirname_first',
+      },
       winopts = {
         preview = {
           previewer = 'builtin',
