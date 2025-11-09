@@ -22,8 +22,14 @@ return {
           -- Code action
           map('<leader>ca', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
 
-          -- Goto declaration. Different from goto definition gd
-          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          -- Go to declaration. Different from goto definition gd
+          map('gD', vim.lsp.buf.declaration, 'Go to Declaration')
+
+          -- Go to references
+          map('gr', vim.lsp.buf.references, 'References')
+
+          -- Go to implementation
+          map('gI', vim.lsp.buf.implementation, 'Go to Implementation')
 
           -- Highlight references of the symbol under cursor
           local client = vim.lsp.get_client_by_id(event.data.client_id)
