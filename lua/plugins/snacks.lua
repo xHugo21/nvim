@@ -64,6 +64,13 @@ return {
         end,
         desc = 'Delete Other Buffers',
       },
+      {
+        '<leader>cR',
+        function()
+          Snacks.rename.rename_file()
+        end,
+        desc = 'LSP: Rename File',
+      },
     },
   },
 }
