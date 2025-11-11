@@ -2,6 +2,8 @@
 return {
   {
     'folke/snacks.nvim',
+    lazy = false,
+    priority = 1000,
     event = 'VeryLazy',
     opts = {
       lazygit = {
@@ -13,13 +15,14 @@ return {
           height = 0.9,
         },
       },
-      scope = {}, -- Scope detection, text objects and jumping based on treesitter or indent
+      scope = {},
       gitbrowse = {},
       toggle = {},
       rename = {},
     },
-    config = function()
+    config = function(_, opts)
       local Snacks = require 'snacks'
+      Snacks.setup(opts)
 
       -- Rename files on oil modification
       vim.api.nvim_create_autocmd('User', {
