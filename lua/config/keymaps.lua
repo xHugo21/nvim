@@ -62,7 +62,8 @@ map('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Commen
 map('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 
 -- diagnostics
-map('n', '<leader>xx', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
+map('n', '<leader>xx', vim.diagnostic.setqflist, { desc = 'Diagnostics' })
+map('n', '<leader>xo', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
 
 -- windows
 map('n', '<leader>-', '<C-W>s', { desc = 'Split Window Below', remap = true })
