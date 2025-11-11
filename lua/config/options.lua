@@ -6,6 +6,7 @@ vim.g.ai_cmp = true
 vim.g.root_lsp_ignore = { 'copilot' }
 vim.g.deprecation_warnings = false
 vim.g.markdown_recommended_style = 0
+vim.g.have_nerd_font = true
 
 -- OPTIONS
 local opt = vim.opt
