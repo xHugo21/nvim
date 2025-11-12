@@ -30,7 +30,10 @@ return {
       end, 'Blame Line')
 
       -- Git Diff buffer
-      map('n', '<leader>gd', gs.diffthis, 'Diff This')
+      map('n', '<leader>gd', function()
+        gs.diffthis()
+        vim.cmd 'wincmd h'
+      end, 'Diff This')
     end,
   },
 }
