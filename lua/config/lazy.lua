@@ -22,7 +22,7 @@ require('lazy').setup({
     config = function()
       require('xeno').new_theme('xeno', {
         base = '#1E1E1E',
-        accent = '#fd1b7c',
+        accent = '#c2bc44',
         transparent = true,
       })
       vim.cmd 'colorscheme xeno'
@@ -32,5 +32,9 @@ require('lazy').setup({
   change_detection = {
     enabled = true,
     notify = false,
+  },
+  checker = {
+    enabled = true,
+    notify = true,
   },
 })
