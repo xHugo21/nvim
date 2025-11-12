@@ -19,7 +19,6 @@ return {
       gitbrowse = {},
       toggle = {},
       rename = {},
-      notifier = {},
     },
     config = function(_, opts)
       local Snacks = require 'snacks'
@@ -77,7 +76,7 @@ return {
       },
     },
   },
-  {
+  { -- Improved UI for command line and messages. Adds LSP status notifications
     'folke/noice.nvim',
     event = 'VeryLazy',
     opts = {},
