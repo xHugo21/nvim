@@ -102,7 +102,21 @@ return {
     prompt_library = prompts,
   },
   keys = {
-    { '<leader>aa', '<cmd>CodeCompanionChat Toggle<CR>', mode = { 'n' }, desc = 'Toggle CodeCompanion Chat' },
+    {
+      '<leader>aa',
+      function()
+        vim.cmd 'CodeCompanionChat'
+
+        if vim.bo.filetype == 'codecompanion' then
+          if vim.api.nvim_get_current_line() == '' then
+            vim.api.nvim_put({ '#{buffer} ' }, 'c', false, true)
+            vim.cmd 'startinsert!'
+          end
+        end
+      end,
+      mode = { 'n', 'v' },
+      desc = 'CodeCompanion Chat with Buffer Context',
+    },
     { '<leader>ae', '<cmd>%CodeCompanion<CR>', mode = { 'n' }, desc = 'CodeCompanion Buffer Prompt' },
     { '<leader>ae', '<cmd>CodeCompanion<CR>', mode = { 'v' }, desc = 'CodeCompanion Visual Prompt' },
     { '<leader>ax', '<cmd>CodeCompanionActions<CR>', mode = { 'n', 'v' }, desc = 'Code Companion Actions' },
