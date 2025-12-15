@@ -16,6 +16,27 @@ local prompts = {
       },
     },
   },
+  ['Explain Selection'] = {
+    strategy = 'chat',
+    description = 'Explain the selected code snippet',
+    opts = {
+      short_name = 'explain',
+      auto_submit = true,
+    },
+    prompts = {
+      {
+        role = 'system',
+        content = 'You are an expert developer and a patient teacher. Your goal is to explain code logic clearly and concisely.',
+      },
+      {
+        role = 'user',
+        content = 'Please explain how the selected code works, step-by-step. Focus on the logic and data flow.',
+        opts = {
+          contains_code = true,
+        },
+      },
+    },
+  },
   ['Git Commit'] = {
     strategy = 'chat',
     description = 'Generate a commit message for current changes',
