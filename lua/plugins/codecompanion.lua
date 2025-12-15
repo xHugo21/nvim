@@ -14,7 +14,7 @@ return {
           user = 'Me',
         },
         slash_commands = {
-          ['file'] = { -- Maps <C-p> to enter files as context
+          ['file'] = {
             keymaps = {
               modes = {
                 i = '<C-p>',
@@ -28,7 +28,8 @@ return {
   },
   keys = {
     { '<leader>aa', '<cmd>CodeCompanionChat Toggle<CR>', mode = { 'n' }, desc = 'Toggle CodeCompanion Chat' },
-    { '<leader>ae', '<cmd>CodeCompanion<CR>', mode = { 'n', 'v' }, desc = 'Code Companion Visual' },
+    { '<leader>ae', '<cmd>CodeCompanion<CR>', mode = { 'n', 'v' }, desc = 'CodeCompanion Prompt' },
+    { '<leader>ax', '<cmd>CodeCompanionActions<CR>', mode = { 'n', 'v' }, desc = 'Code Companion Actions' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
