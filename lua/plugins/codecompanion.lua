@@ -28,6 +28,7 @@ return {
   },
   keys = {
     { '<leader>aa', '<cmd>CodeCompanionChat Toggle<CR>', mode = { 'n' }, desc = 'Toggle CodeCompanion Chat' },
+    { '<leader>ae', '<cmd>CodeCompanion<CR>', mode = { 'n', 'v' }, desc = 'Code Companion Visual' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
