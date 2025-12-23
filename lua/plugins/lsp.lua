@@ -115,11 +115,9 @@ return {
         },
       }
 
-      -- Ensure the servers and tools above are installed
-      vim.tbl_keys(servers or {})
-
+      local ensure_installed = vim.tbl_keys(servers or {})
       require('mason-lspconfig').setup {
-        ensure_installed = {},
+        ensure_installed = ensure_installed,
         automatic_installation = false,
         handlers = {
           function(server_name)
