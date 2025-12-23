@@ -16,19 +16,11 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          -- Rename variable
-          map('<leader>cr', vim.lsp.buf.rename, 'Rename')
-
-          -- Code action
+          map('<leader>cr', vim.lsp.buf.rename, 'Rename Variable')
           map('<leader>ca', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
-
-          -- Go to declaration. Different from goto definition gd
+          map('gd', vim.lsp.buf.definition, 'Go to Definition')
           map('gD', vim.lsp.buf.declaration, 'Go to Declaration')
-
-          -- Go to references
           map('gr', vim.lsp.buf.references, 'References')
-
-          -- Go to implementation
           map('gI', vim.lsp.buf.implementation, 'Go to Implementation')
 
           -- Highlight references of the symbol under cursor
