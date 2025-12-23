@@ -182,20 +182,12 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        json = { 'prettier' },
+        json = { 'prettierd' },
         typst = { 'typstyle' },
-        -- c = { "clang-format" },
-        -- javascript = { "prettier" },
-        -- typescript = { "prettier" },
         python = { 'black' },
         sh = { 'shfmt' },
-        -- html = { "prettier" },
-        -- css = { "prettier" },
-        -- vue = { "prettier" },
-
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        c = { 'clang-format' },
+        -- javascript = { 'prettierd' },
       },
     },
   },
