@@ -47,9 +47,6 @@ map('o', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev Search Result
 -- save file
 map({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
--- keywordprg
-map('n', '<leader>K', '<cmd>norm! K<cr>', { desc = 'Keywordprg' })
-
 -- better indenting
 map('v', '<', '<gv')
 map('v', '>', '>gv')
