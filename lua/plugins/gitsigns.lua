@@ -33,7 +33,7 @@ return {
       map('n', '<leader>gd', function()
         gs.diffthis()
         vim.cmd 'wincmd h'
-      end, 'Diff This')
+      end, 'Diff Buffer')
     end,
   },
 }

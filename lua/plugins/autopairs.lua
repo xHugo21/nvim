@@ -2,7 +2,6 @@ return {
   'windwp/nvim-autopairs',
   event = 'InsertEnter',
   opts = {
-    -- Don't pair if next char is alphanumeric or a dot
     ignored_next_char = '[%w%.]',
 
     -- Prevent pairing if inside a string or comment

@@ -1,5 +1,5 @@
 return {
-  { -- Improved UI for command line and messages. Adds LSP status notifications
+  {
     'folke/noice.nvim',
     event = 'VeryLazy',
     opts = {

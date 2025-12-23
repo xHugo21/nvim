@@ -1,4 +1,4 @@
-return { -- Autocompletion
+return {
   'saghen/blink.cmp',
   event = 'VimEnter',
   version = '1.*',
@@ -15,12 +15,10 @@ return { -- Autocompletion
       ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
     },
     appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
       nerd_font_variant = 'normal',
     },
     completion = {
       documentation = { auto_show = true, auto_show_delay_ms = 500 },
-      -- Avoids replacing the text whilst cycling through completions
       list = { selection = { auto_insert = false } },
     },
     sources = {
@@ -32,7 +30,6 @@ return { -- Autocompletion
 
     snippets = { preset = 'default' },
 
-    -- Shows a signature help window while you type arguments for a function
     signature = { enabled = true },
   },
 }

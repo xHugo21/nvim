@@ -1,8 +1,7 @@
-return { -- Highlight, edit, and navigate code
+return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs',
-  -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   opts = {
     ensure_installed = { 'bash', 'regex', 'diff', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'vimdoc' },
     auto_install = true,
