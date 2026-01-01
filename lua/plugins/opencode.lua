@@ -9,6 +9,13 @@ return {
           options = '-h -p 40',
         },
       },
+
+      prompts = {
+        commit = {
+          prompt = "Generate a Conventional Commit message for the following changes: @diff. Return ONLY the raw commit message (e.g. 'feat: add feature'). Do NOT include the scope/parenthesis part (e.g. do NOT use 'feat(core): add feature'). Do not wrap in markdown or provide explanations.",
+          submit = true,
+        },
+      },
     }
 
     vim.o.autoread = true
