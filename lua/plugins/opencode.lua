@@ -34,12 +34,15 @@ return {
 
     vim.o.autoread = true
 
-    vim.keymap.set({ 'n', 't' }, '<leader>aa', function()
+    vim.keymap.set({ 'n', 't' }, '<leader>ao', function()
       require('opencode').toggle()
-    end, { desc = 'Toggle opencode' })
-    vim.keymap.set({ 'n', 'x' }, '<leader>ae', function()
-      require('opencode').ask('@this: ', { submit = true })
+    end, { desc = 'Open opencode' })
+    vim.keymap.set({ 'n', 'x' }, '<leader>aa', function()
+      require('opencode').ask('', { submit = true })
     end, { desc = 'Ask opencode' })
+    vim.keymap.set({ 'x' }, '<leader>ae', function()
+      require('opencode').ask('@this: ', { submit = true })
+    end, { desc = 'Ask opencode (visual)' })
     vim.keymap.set({ 'n', 'x' }, '<leader>ax', function()
       require('opencode').select()
     end, { desc = 'Execute opencode action…' })
