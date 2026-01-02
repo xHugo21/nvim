@@ -7,7 +7,12 @@ return {
     local actions = fzf.actions
 
     -- Use as vim.ui.select
-    fzf.register_ui_select()
+    fzf.register_ui_select {
+      winopts = {
+        height = 0.4,
+        width = 0.5,
+      },
+    }
 
     -- Quickfix
     config.defaults.keymap.fzf['ctrl-q'] = 'select-all+accept'
