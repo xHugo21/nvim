@@ -1,20 +1,33 @@
-local tmux_provider = { -- Checks for opencode on tmux window instead of a split
+local tmux_provider = {
   toggle = function()
-    local handle = io.popen "tmux list-windows -F '#{window_name}'"
+    local cwd = vim.fn.getcwd()
+    local handle = io.popen("tmux list-windows -F '#{window_name} #{window_id}' -f '#{==:#{window_name},opencode}'")
     if not handle then
       vim.notify('Failed to run tmux list-windows.', vim.log.levels.ERROR)
       return
     end
-    local windows = handle:read '*a'
+
+    local output = handle:read('*a')
     handle:close()
 
-    local cmd = 'opencode'
-
-    if windows and string.find(windows, 'opencode') then
-      os.execute 'tmux select-window -t opencode'
-    else
-      os.execute("tmux new-window -n opencode '" .. cmd .. "'")
+    if output == '' then
+      os.execute(string.format("tmux new-window -n opencode 'cd %s && opencode'", cwd))
+      return
     end
+
+    for _, window_id in string.gmatch(output, '%S+%s+(@%d+)') do
+      local pane_handle = io.popen(string.format("tmux list-panes -t %s -F '#{pane_current_path}'", window_id))
+      if pane_handle then
+        local pane_cwd = pane_handle:read('*a'):gsub('%s+$', '')
+        pane_handle:close()
+        if pane_cwd == cwd then
+          os.execute(string.format('tmux select-window -t %s', window_id))
+          return
+        end
+      end
+    end
+
+    os.execute(string.format("tmux new-window -n opencode 'cd %s && opencode'", cwd))
   end,
 }
 
