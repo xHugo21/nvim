@@ -29,7 +29,11 @@ return {
         lualine_c = {
           { 'filename', path = 1 },
         },
-        lualine_x = {},
+        lualine_x = {
+          {
+            require('opencode').statusline,
+          },
+        },
         lualine_y = {
           {
             'diagnostics',
