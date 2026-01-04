@@ -1,5 +1,6 @@
 return {
   'sudo-tee/opencode.nvim',
+  event = 'VeryLazy',
   config = function()
     require('opencode').setup {
       keymap = {
@@ -27,7 +28,7 @@ return {
     {
       '<leader>oc',
       function()
-        vim.cmd 'Opencode command /commit'
+        vim.cmd 'Opencode command commit'
       end,
       desc = 'Run opencode commit command',
     },
