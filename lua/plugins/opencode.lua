@@ -5,6 +5,7 @@ return {
       keymap = {
         editor = {
           ['<leader>aa'] = { 'toggle' },
+          ['<leader>oc'] = false,
         },
         input_window = {
           ['<C-s>'] = { 'submit_input_prompt', mode = { 'n', 'i' } },
@@ -22,6 +23,15 @@ return {
       },
     }
   end,
+  keys = {
+    {
+      '<leader>oc',
+      function()
+        vim.cmd 'Opencode command /commit'
+      end,
+      desc = 'Run opencode commit command',
+    },
+  },
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
