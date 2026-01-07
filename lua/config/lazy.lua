@@ -29,6 +29,13 @@ require('lazy').setup({
     end,
   },
 }, {
+  ui = {
+    border = 'rounded',
+    size = {
+      width = 0.7,
+      height = 0.7,
+    },
+  },
   change_detection = {
     enabled = true,
     notify = false,
