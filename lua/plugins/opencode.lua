@@ -6,6 +6,7 @@ return {
       keymap = {
         editor = {
           ['<leader>aa'] = { 'toggle' },
+          ['gp'] = { 'configure_provider' },
           ['<leader>oc'] = false,
         },
         input_window = {
