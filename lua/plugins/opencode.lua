@@ -7,6 +7,7 @@ return {
         editor = {
           ['<leader>aa'] = { 'toggle' },
           ['gp'] = { 'configure_provider' },
+          ['<leader>ae'] = { 'quick_chat', mode = { 'x' } },
           ['<leader>oc'] = false,
         },
         input_window = {
@@ -21,6 +22,9 @@ return {
           ['<C-c>'] = { 'close' },
           ['<esc>'] = { 'cancel' },
           ['<M-m>'] = { 'toggle_pane', mode = { 'n', 'i' } },
+        },
+        session_picker = {
+          new_session = false,
         },
       },
     }
