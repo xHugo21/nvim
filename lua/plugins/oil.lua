@@ -18,7 +18,7 @@ return {
       end, 0)
     end
   end,
-  dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+  dependencies = { { 'nvim-mini/mini.icons', opts = {} } },
   keys = {
     {
       '<leader>e',
