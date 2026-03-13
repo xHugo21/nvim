@@ -52,8 +52,21 @@ return {
         lua_ls = {
           settings = {
             Lua = {
+              runtime = {
+                version = 'LuaJIT',
+              },
               completion = {
                 callSnippet = 'Replace',
+              },
+              diagnostics = {
+                globals = { 'vim' },
+              },
+              workspace = {
+                checkThirdParty = false,
+                library = vim.list_extend(
+                  vim.api.nvim_get_runtime_file('', true),
+                  { '${3rd}/luv/library' }
+                ),
               },
             },
           },
@@ -73,16 +86,6 @@ return {
         },
       }
     end,
-  },
-  {
-    'folke/lazydev.nvim',
-    ft = 'lua',
-    opts = {
-      library = {
-        -- Load luvit types when the `vim.uv` word is found
-        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
-      },
-    },
   },
   {
     'stevearc/conform.nvim',

@@ -4,7 +4,6 @@ return {
   version = '1.*',
   dependencies = {
     'rafamadriz/friendly-snippets',
-    'folke/lazydev.nvim',
   },
   --- @module 'blink.cmp'
   --- @type blink.cmp.Config
@@ -22,10 +21,7 @@ return {
       list = { selection = { auto_insert = false } },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
-      providers = {
-        lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
-      },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
 
     snippets = { preset = 'default' },
