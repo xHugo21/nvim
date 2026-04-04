@@ -19,7 +19,6 @@ return {
       gitbrowse = {},
       toggle = {},
       rename = {},
-      notifier = {},
     },
     config = function(_, opts)
       local Snacks = require 'snacks'

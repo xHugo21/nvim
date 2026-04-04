@@ -13,6 +13,8 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
+require('vim._core.ui2').enable({ enable = true, msg = { targets = 'msg' } })
+
 require('lazy').setup({
   { import = 'plugins' },
   {
