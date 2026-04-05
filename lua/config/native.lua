@@ -56,47 +56,8 @@ local function filename_component()
   return path
 end
 
-local function diagnostic_counts()
-  local severity = vim.diagnostic.severity
-
-  if vim.diagnostic.count then
-    local ok, counts = pcall(vim.diagnostic.count, 0)
-    if ok and type(counts) == 'table' then
-      return {
-        error = counts[severity.ERROR] or 0,
-        warn = counts[severity.WARN] or 0,
-        info = counts[severity.INFO] or 0,
-        hint = counts[severity.HINT] or 0,
-      }
-    end
-  end
-
-  return {
-    error = #vim.diagnostic.get(0, { severity = severity.ERROR }),
-    warn = #vim.diagnostic.get(0, { severity = severity.WARN }),
-    info = #vim.diagnostic.get(0, { severity = severity.INFO }),
-    hint = #vim.diagnostic.get(0, { severity = severity.HINT }),
-  }
-end
-
 local function diagnostics_component()
-  local counts = diagnostic_counts()
-  local parts = {}
-
-  if counts.error > 0 then
-    table.insert(parts, string.format('%%#DiagnosticError#E:%d%%*', counts.error))
-  end
-  if counts.warn > 0 then
-    table.insert(parts, string.format('%%#DiagnosticWarn#W:%d%%*', counts.warn))
-  end
-  if counts.info > 0 then
-    table.insert(parts, string.format('%%#DiagnosticInfo#I:%d%%*', counts.info))
-  end
-  if counts.hint > 0 then
-    table.insert(parts, string.format('%%#DiagnosticHint#H:%d%%*', counts.hint))
-  end
-
-  return table.concat(parts, ' ')
+  return vim.diagnostic.status()
 end
 
 local function lsp_progress_component()
