@@ -5,7 +5,7 @@ local mode_map = {
   v = { text = 'VISUAL', hl = 'Special' },
   i = { text = 'INSERT', hl = 'String' },
   R = { text = 'REPLACE', hl = 'Error' },
-  c = { text = 'COMMAND', hl = 'Statement' },
+  c = { text = 'COMMAND', hl = 'Error' },
   t = { text = 'TERMINAL', hl = 'String' },
 }
 
@@ -14,8 +14,6 @@ local special_filetypes = {
   fzf = true,
   oil = true,
 }
-
-local lsp_progress = {}
 
 local function mode_component()
   local mode = vim.api.nvim_get_mode().mode
@@ -61,11 +59,7 @@ local function diagnostics_component()
 end
 
 local function lsp_progress_component()
-  local progress_parts = {}
-  for _, client_data in pairs(lsp_progress) do
-    table.insert(progress_parts, client_data.message)
-  end
-  return table.concat(progress_parts, ' ')
+  return vim.lsp.status()
 end
 
 local function progress_component()
@@ -108,31 +102,6 @@ local function render()
 end
 
 vim.opt.statusline = "%!v:lua.require('config.native').render()"
-
-vim.api.nvim_create_autocmd('LspProgress', {
-  group = vim.api.nvim_create_augroup('native_lsp_progress', { clear = true }),
-  callback = function(ev)
-    local client_id = ev.data.client_id
-    local value = ev.data.params.value or {}
-    local kind = value.kind
-
-    if kind == 'begin' then
-      lsp_progress[client_id] = { message = value.title or 'LSP' }
-    elseif kind == 'report' then
-      if lsp_progress[client_id] then
-        local message = value.title or 'LSP'
-        if value.percentage then
-          message = message .. ' ' .. value.percentage .. '%'
-        end
-        lsp_progress[client_id].message = message
-      end
-    elseif kind == 'end' then
-      lsp_progress[client_id] = nil
-    end
-
-    vim.cmd 'redrawstatus'
-  end,
-})
 
 return {
   ui2,
