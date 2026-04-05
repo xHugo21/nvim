@@ -62,6 +62,14 @@ local function lsp_progress_component()
   return vim.lsp.status()
 end
 
+local function recording_component()
+  local reg = vim.fn.reg_recording()
+  if reg == '' then
+    return ''
+  end
+  return string.format('%%#ErrorMsg#recording @%s %%*', reg)
+end
+
 local function progress_component()
   local current = vim.fn.line '.'
   local total = math.max(vim.fn.line '$', 1)
@@ -85,6 +93,7 @@ local function render()
     filename_component(),
     '%<',
     '%=',
+    recording_component(),
     diagnostics_component(),
     lsp_progress_component(),
     progress_component(),
