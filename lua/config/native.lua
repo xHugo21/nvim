@@ -77,10 +77,6 @@ local function diagnostics_component()
   return vim.diagnostic.status()
 end
 
-local function lsp_progress_component()
-  return vim.lsp.status()
-end
-
 local function recording_component()
   local reg = vim.fn.reg_recording()
   if reg == '' then
@@ -114,7 +110,6 @@ local function render()
     '%=',
     recording_component(),
     diagnostics_component(),
-    lsp_progress_component(),
     progress_component(),
     location_component(),
   }
