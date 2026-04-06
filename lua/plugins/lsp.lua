@@ -47,6 +47,10 @@ return {
       -- Gets blink capabilities to pass to the LSP
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
+      vim.lsp.config('*', {
+        capabilities = capabilities,
+      })
+
       -- Enable the following language servers
       local servers = {
         lua_ls = {
@@ -73,17 +77,15 @@ return {
         },
       }
 
-      local ensure_installed = vim.tbl_keys(servers or {})
+      local ensure_installed = vim.tbl_keys(servers)
+
+      for server_name, server in pairs(servers) do
+        vim.lsp.config(server_name, server)
+      end
+
       require('mason-lspconfig').setup {
         ensure_installed = ensure_installed,
-        automatic_installation = false,
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
+        automatic_enable = ensure_installed,
       }
     end,
   },
