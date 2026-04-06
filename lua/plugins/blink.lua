@@ -23,6 +23,10 @@ return {
       list = { selection = { auto_insert = false } },
       ghost_text = { enabled = true }
     },
+    cmdline = {
+      keymap = { preset = 'inherit' },
+      completion = { menu = { auto_show = true } },
+    },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
