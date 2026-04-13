@@ -10,9 +10,10 @@ return {
   opts = {
     keymap = {
       preset = 'none',
-      ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
+      ['<Tab>'] = { 'snippet_forward', 'accept', 'fallback' },
       ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
-      ['<C-y>'] = { 'accept', 'fallback' },
+      ['<C-j>'] = { 'select_next', 'fallback' },
+      ['<C-k>'] = { 'select_prev', 'fallback' },
       ['<C-h>'] = { 'hide', 'fallback' },
     },
     appearance = {
@@ -21,7 +22,7 @@ return {
     completion = {
       documentation = { auto_show = true, auto_show_delay_ms = 500 },
       list = { selection = { auto_insert = false } },
-      ghost_text = { enabled = true }
+      ghost_text = { enabled = true },
     },
     cmdline = {
       keymap = { preset = 'inherit' },
