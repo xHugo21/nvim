@@ -24,16 +24,6 @@ return {
       local Snacks = require 'snacks'
       Snacks.setup(opts)
 
-      -- Rename files on oil modification
-      vim.api.nvim_create_autocmd('User', {
-        pattern = 'OilActionsPost',
-        callback = function(event)
-          if event.data.actions[1].type == 'move' then
-            Snacks.rename.on_rename_file(event.data.actions[1].src_url, event.data.actions[1].dest_url)
-          end
-        end,
-      })
-
       Snacks.toggle.option('spell', { name = 'spelling' }):map '<leader>us'
       Snacks.toggle.option('wrap', { name = 'wrap' }):map '<leader>uw'
       Snacks.toggle.inlay_hints():map '<leader>uh'
