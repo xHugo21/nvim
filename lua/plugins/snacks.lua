@@ -4,7 +4,6 @@ return {
     'folke/snacks.nvim',
     lazy = false,
     priority = 1000,
-    event = 'VeryLazy',
     opts = {
       lazygit = {
         enabled = true,

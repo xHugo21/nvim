@@ -1,6 +1,6 @@
 return {
   'ibhagwan/fzf-lua',
-  lazy = false,
+  cmd = 'FzfLua',
   opts = function(_, opts)
     local fzf = require 'fzf-lua'
     local config = fzf.config
@@ -52,12 +52,12 @@ return {
       '<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>',
       desc = 'Switch Buffer',
     },
-    { '<leader><space>', '<cmd>FzfLua files<cr>', desc = 'Find Files' },
-    { '<leader>sg', '<cmd>FzfLua live_grep<cr>', desc = 'Live Grep' },
-    { '<leader>gD', '<cmd>FzfLua git_diff<cr>', desc = 'Git Diff' },
-    { '<leader>gB', '<cmd>FzfLua git_blame<cr>', desc = 'Git Blame' },
-    { '<leader>sd', '<cmd>FzfLua diagnostics_workspace<cr>', desc = 'Search Diagnostics' },
-    { '<leader>sk', '<cmd>FzfLua keymaps<cr>', desc = 'Search Keymaps' },
+    { '<leader><space>', '<cmd>FzfLua files<cr>',                 desc = 'Find Files' },
+    { '<leader>sg',      '<cmd>FzfLua live_grep<cr>',             desc = 'Live Grep' },
+    { '<leader>gD',      '<cmd>FzfLua git_diff<cr>',              desc = 'Git Diff' },
+    { '<leader>gB',      '<cmd>FzfLua git_blame<cr>',             desc = 'Git Blame' },
+    { '<leader>sd',      '<cmd>FzfLua diagnostics_workspace<cr>', desc = 'Search Diagnostics' },
+    { '<leader>sk',      '<cmd>FzfLua keymaps<cr>',               desc = 'Search Keymaps' },
   },
   dependencies = { 'nvim-mini/mini.icons' },
 }
