@@ -54,6 +54,7 @@ return {
     },
     { '<leader><space>', '<cmd>FzfLua files<cr>',                 desc = 'Find Files' },
     { '<leader>sg',      '<cmd>FzfLua live_grep<cr>',             desc = 'Live Grep' },
+    { "<leader>sw",      "<cmd>FzfLua grep_cword<cr>",            desc = "Search (grep) word under cursor" },
     { '<leader>gD',      '<cmd>FzfLua git_diff<cr>',              desc = 'Git Diff' },
     { '<leader>gB',      '<cmd>FzfLua git_blame<cr>',             desc = 'Git Blame' },
     { '<leader>sd',      '<cmd>FzfLua diagnostics_workspace<cr>', desc = 'Search Diagnostics' },
