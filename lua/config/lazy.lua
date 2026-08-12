@@ -15,19 +15,6 @@ rtp:prepend(lazypath)
 
 require('lazy').setup({
   { import = 'plugins' },
-  {
-    'kyza0d/xeno.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('xeno').new_theme('xeno', {
-        base = '#1E1E1E',
-        accent = '#fd1b7c',
-        transparent = true,
-      })
-      vim.cmd 'colorscheme xeno'
-    end,
-  },
 }, {
   ui = {
     border = 'rounded',
